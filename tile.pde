@@ -2,6 +2,7 @@ public class Tile{
   int x;
   int y;
   boolean walkable;
+  boolean visible = false;
   String name;
   
   Tile(int _x, int _y, boolean _walkable, String _name){
@@ -13,6 +14,11 @@ public class Tile{
   
   //funkcja do rysowania
   void disp(){
-    image(tile, x*32, y*32);
+    if(visible){
+      image(tile, x*32, y*32);
+    }else{
+     fill(0);
+     rect(x*32,y*32,32,32);
+    }
   }
 };
