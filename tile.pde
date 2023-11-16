@@ -1,15 +1,25 @@
 public class Tile{
+  Tiles type;
   int x;
   int y;
   boolean walkable;
   boolean visible = false;
   String name;
   
-  Tile(int _x, int _y, boolean _walkable, String _name){
+  Tile(int _x, int _y, Tiles _type){
    x = _x;
    y = _y;
-   walkable = _walkable;
-   name = _name;
+   type = _type;
+   switch (type){
+     case EMPTY:
+     walkable = true;
+     name = "Empty";
+     break;
+     case LAVA:
+     walkable = false;
+     name = "Lava";
+     break;
+   }
   }
   
   //funkcja do rysowania

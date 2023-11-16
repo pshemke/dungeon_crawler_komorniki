@@ -4,6 +4,16 @@ PImage player;
 int X_TILES_NUMBER = 33;
 int Y_TILES_NUMBER = 18;
 
+enum Tiles{
+ EMPTY,
+ LAVA,
+ MOSSED,
+ MOSSED_FULL,
+ WALL,
+ WALL_GOLD,
+ FLOOR_GOLD
+}
+
 Tile[][] TILE_MAP = new Tile[X_TILES_NUMBER][Y_TILES_NUMBER];
 
 Player character = new Player(0,0);
