@@ -42,9 +42,17 @@ void draw(){
 }
 
 void keyPressed(){
+<<<<<<< Updated upstream
  character.move(key); 
 }
 
 boolean is_on_map(int x, int y){
   return (x > -1 && x < X_TILES_NUMBER && y > -1 && y < Y_TILES_NUMBER);
+=======
+  character.move(key);
+}
+
+boolean is_on_map(int x, int y){
+  return (x >= 0 && x < X_TILES_NUMBER && y > -1 && y < Y_TILES_NUMBER);
+>>>>>>> Stashed changes
 }
