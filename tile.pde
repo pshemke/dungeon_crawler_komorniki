@@ -22,6 +22,12 @@ public class Tile{
      damage = 5;
      name = "Lava";
      break;
+     
+     case WALL:
+     walkable = false;
+     breakable = true;
+     hp = 5;
+     name = "Wall";
    }
   }
   
