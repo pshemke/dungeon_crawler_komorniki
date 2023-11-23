@@ -2,13 +2,9 @@ public class Tile{
   Tiles type;
   int x;
   int y;
-  boolean walkable = true;
+  boolean walkable;
   boolean visible = false;
   String name;
-  int damage = 0;
-  int regen = 0;
-  int hp = 0;
-  boolean breakable = false;
   
   Tile(int _x, int _y, Tiles _type){
    x = _x;
@@ -16,10 +12,11 @@ public class Tile{
    type = _type;
    switch (type){
      case EMPTY:
+     walkable = true;
      name = "Empty";
      break;
      case LAVA:
-     damage = 5;
+     walkable = false;
      name = "Lava";
      break;
    }
