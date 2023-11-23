@@ -25,10 +25,17 @@ public class Tile{
   //funkcja do rysowania
   void disp(){
     if(visible){
+<<<<<<< Updated upstream
       image(tile, x*32, y*32);
     }else{
      fill(0);
      rect(x*32,y*32,32,32);
+=======
+    image(tile, x*32, y*32);
+    }else{
+      fill(0);
+      rect(x*32,y*32,32,32);
+>>>>>>> Stashed changes
     }
   }
 };
