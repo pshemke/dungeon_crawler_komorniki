@@ -5,4 +5,4 @@ krok 2. pixel art
 krok 3. profit
 
 changelog 02/11
-łał zaraz mamy zajęcia i gotowałem trochę z muzyczkami
+łał zaraz mamy zajęcia i gotowałem trochę z muzyczkami wow wo wo MEGA
