@@ -2,13 +2,10 @@ public class Tile{
   Tiles type;
   int x;
   int y;
-  boolean walkable = true;
+  boolean walkable;
   boolean visible = false;
   String name;
-  int damage = 0;
-  int regen = 0;
-  int hp = 0;
-  boolean breakable = false;
+  
   
   Tile(int _x, int _y, Tiles _type){
    x = _x;
@@ -19,18 +16,7 @@ public class Tile{
      name = "Empty";
      break;
      case LAVA:
-     damage = 5;
      name = "Lava";
-     break;
-     case WALL:
-     walkable = false;
-     breakable = true;
-     hp = 5;
-     name = "Wall";
-     break;
-     case MOSSED_FULL:
-     regen = 25;
-     name = "MossedOut";
      break;
    }
   }
