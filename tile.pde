@@ -32,6 +32,10 @@ public class Tile{
      regen = 25;
      name = "MossedOut";
      break;
+     case MOSSED:
+     regen = 5;
+     name = "Mossed";
+     break;
           case WALL_GOLD:
      walkable = false;
      breakable = true;
