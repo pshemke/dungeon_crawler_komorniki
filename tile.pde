@@ -48,7 +48,26 @@ public class Tile{
   //funkcja do rysowania
   void disp(){
     if(visible){
-      image(tile, x*32, y*32);
+      switch(type){
+        case EMPTY:
+     image(empty_txt, x*32, y*32);
+     break;
+     case LAVA:
+     image(lava_txt, x*32, y*32);
+     break;
+     case WALL:
+     image(wall_txt, x*32, y*32);
+     break;
+     case MOSSED_FULL:
+     image(mossed_full_txt, x*32, y*32);
+     break;
+     case MOSSED:
+     image(mossed_txt, x*32, y*32);
+     break;
+     case WALL_GOLD:
+     image(wall_gold_txt, x*32, y*32);
+     break;
+      }
     }else{
      fill(0);
      rect(x*32,y*32,32,32);
