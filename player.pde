@@ -1,6 +1,9 @@
 public class Player{
   int x;
   int y;
+  int damage = 1;
+  int mining = 1;
+  int defence = 0;
   
   Player(int _x, int _y){
    x = _x;
@@ -25,6 +28,11 @@ public class Player{
     if(map[x][y].walkable){
       this.x = x;
       this.y = y;
+    }else if(map[x][y].breakable){
+      map[x][y].hp -= mining;
+      if(map[x][y].hp < 1){
+        map[x][y] = new Tile(x,y,Tiles.EMPTY);
+      }
     }
   }
   
