@@ -86,6 +86,25 @@ void generator(){
        }
     }
   }
+  //Step 3 - generate lava lakes
+  int lava_number = 50;
+  int max_lava_width = 2;
+  int max_lava_height = 2;
+  
+  for(int i = 0; i < lava_number; i++){
+    int lava_x = (int)random(X_TILES_NUMBER);
+    int lava_y = (int)random(Y_TILES_NUMBER);
+    int lava_width = (int)random(max_lava_width);
+    int lava_height = (int)random(max_lava_height);
+    for(int x = lava_x - lava_width; x < lava_width + lava_x + 1; x++){
+       for(int y = lava_y - lava_width; y < lava_height + lava_y + 1; y++){
+         if(is_on_map(x,y) && TILE_MAP[x][y].type == Tiles.EMPTY){
+          TILE_MAP[x][y] = new Tile(x,y,Tiles.LAVA); 
+         }
+       }
+    }
+  }
+  
   
   //Step - player on empty tile
   TILE_MAP[character.x][character.y] = new Tile(character.x,character.y,Tiles.EMPTY);
