@@ -67,10 +67,24 @@ public class Tile{
      case WALL_GOLD:
      image(wall_gold_txt, x*32, y*32);
      break;
+     case FLOOR_GOLD:
+     image(floor_gold_txt, x*32, y*32);
+     break;
       }
     }else{
      fill(0);
      rect(x*32,y*32,32,32);
+    }
+  }
+  
+  void desc(){
+    fill(0);
+    textSize(40);
+    if(mouseX < (x+1)*32 && mouseX > x*32 && mouseY < (y+1)*32 && mouseY > y*32 && visible){
+      String desc_name = "Name: " + name;
+      text(desc_name, 0, 620);
+      
+      
     }
   }
 };

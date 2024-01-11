@@ -44,9 +44,11 @@ void setup(){
 }
 
 void draw(){
+  background(128);
     for(int i = 0; i < X_TILES_NUMBER;i++){
       for(int j = 0; j < Y_TILES_NUMBER; j++){
         TILE_MAP[i][j].disp();
+        TILE_MAP[i][j].desc();
     }
   }
   
@@ -87,7 +89,7 @@ void generator(){
     }
   }
   //Step 3 - generate lava lakes
-  int lava_number = 50;
+  int lava_number = 10;
   int max_lava_width = 2;
   int max_lava_height = 2;
   
@@ -105,6 +107,26 @@ void generator(){
     }
   }
   
+  //Step 4 - generate wall_gold
+  int wall_gold_number = 15;
+  int max_wall_gold_width = 2;
+  int max_wall_gold_height = 2;
+  
+  for(int i = 0; i < wall_gold_number; i++){
+    int wall_gold_x = (int)random(X_TILES_NUMBER);
+    int wall_gold_y = (int)random(Y_TILES_NUMBER);
+    int wall_gold_width = (int)random(max_wall_gold_width);
+    int wall_gold_height = (int)random(max_wall_gold_height);
+    for(int x = wall_gold_x - wall_gold_width; x < wall_gold_width + wall_gold_x + 1; x++){
+       for(int y = wall_gold_y - wall_gold_width; y < wall_gold_height + wall_gold_y + 1; y++){
+         if(is_on_map(x,y) && TILE_MAP[x][y].type == Tiles.WALL){
+          TILE_MAP[x][y] = new Tile(x,y,Tiles.WALL_GOLD); 
+         }else if(is_on_map(x,y) && TILE_MAP[x][y].type == Tiles.EMPTY){
+           TILE_MAP[x][y] = new Tile(x,y,Tiles.FLOOR_GOLD); 
+         }
+       }
+    }
+  }
   
   //Step - player on empty tile
   TILE_MAP[character.x][character.y] = new Tile(character.x,character.y,Tiles.EMPTY);
