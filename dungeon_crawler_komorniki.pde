@@ -6,6 +6,10 @@ PImage wall_txt;
 PImage wall_gold_txt;
 PImage floor_gold_txt;
 
+PImage player_sheet;
+PImage[] player_idle = new PImage[2];
+PImage[] player_walking = new PImage[4];
+
 PImage player;
 
 int X_TILES_NUMBER = 33;
@@ -22,6 +26,8 @@ enum Tiles{
  MAX
 }
 
+
+
 Tile[][] TILE_MAP = new Tile[X_TILES_NUMBER][Y_TILES_NUMBER];
 
 Player character = new Player(2,2);
@@ -35,8 +41,11 @@ void setup(){
   wall_txt = loadImage("src/textures/ston-wol-32x32.png");
   wall_gold_txt = loadImage("src/textures/wall_gold.png");
   floor_gold_txt = loadImage("src/textures/floor_tile_gold.png");
+  player_sheet = loadImage("src/textures/AnimationSheet_Character.png");
   
-  player = loadImage("src/textures/goober.png");
+  load_player_sheet();
+  
+  player = player_idle[0];
 
   generator();
   
@@ -52,7 +61,9 @@ void draw(){
     }
   }
   
+  character.animate();
   character.disp();
+  
 }
 
 void keyPressed(){
@@ -130,4 +141,14 @@ void generator(){
   
   //Step - player on empty tile
   TILE_MAP[character.x][character.y] = new Tile(character.x,character.y,Tiles.EMPTY);
+}
+
+void load_player_sheet(){
+  for(int i =0; i<2; i++){
+    player_idle[i] = player_sheet.get(0,32*i,32,32);
+  }
+  
+  for(int i =0; i<4; i++){
+    player_walking[i] = player_sheet.get(64,32*i,32,32);
+  }
 }

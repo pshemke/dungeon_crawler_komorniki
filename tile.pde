@@ -8,6 +8,7 @@ public class Tile{
   int damage = 0;
   int regen = 0;
   int hp = 0;
+  int gold = 0;
   boolean breakable = false;
   
   Tile(int _x, int _y, Tiles _type){
@@ -30,17 +31,22 @@ public class Tile{
      break;
      case MOSSED_FULL:
      regen = 25;
-     name = "MossedOut";
+     name = "Mossed Out";
      break;
      case MOSSED:
      regen = 5;
      name = "Mossed";
      break;
-          case WALL_GOLD:
+     case WALL_GOLD:
      walkable = false;
      breakable = true;
      hp = 7;
-     name = "Wall_gold";
+     gold = 3 + (int)random(5);
+     name = "Wall Gold";
+     break;
+     case FLOOR_GOLD:
+     gold = 1 + (int)random(2);
+     name = "Floor Gold";
      break;
    }
   }
@@ -80,7 +86,7 @@ public class Tile{
   void desc(){
     fill(0);
     textSize(40);
-    if(mouseX < (x+1)*32 && mouseX > x*32 && mouseY < (y+1)*32 && mouseY > y*32 && visible){
+    if(mouseX <= (x+1)*32 && mouseX > x*32 && mouseY <= (y+1)*32 && mouseY > y*32 && visible){
       String desc_name = "Name: " + name;
       text(desc_name, 0, 620);
       

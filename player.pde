@@ -1,9 +1,21 @@
+enum States{
+     IDLE,
+     WALKING
+    }
+
 public class Player{
   int x;
   int y;
+  
   int damage = 1;
   int mining = 1;
   int defence = 0;
+  int gold = 0;
+  
+  
+  
+  States state = States.IDLE;
+  int animation_counter=0;
   
   Player(int _x, int _y){
    x = _x;
@@ -45,6 +57,18 @@ public class Player{
            }
         }
     }
+  }
+  
+  void animate(){
+     switch(state){
+      case IDLE:
+      player = player_idle[animation_counter];
+      animation_counter++;
+      if(animation_counter>1){
+       animation_counter=0; 
+      }
+      break;
+     }
   }
   
 }
