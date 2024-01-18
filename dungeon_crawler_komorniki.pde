@@ -128,6 +128,25 @@ void generator(){
     }
   }
   
+  //Step 4 - generate moss
+  int moss_number = 15;
+  int max_moss_width = 2;
+  int max_moss_height = 2;
+  
+  for(int i = 0; i < moss_number; i++){
+    int moss_x = (int)random(X_TILES_NUMBER);
+    int moss_y = (int)random(Y_TILES_NUMBER);
+    int moss_width = (int)random(max_moss_width);
+    int moss_height = (int)random(max_moss_height);
+    for(int x = moss_x - moss_width; x < moss_width + moss_x + 1; x++){
+       for(int y = moss_y - moss_width; y < moss_height + moss_y + 1; y++){
+         if(is_on_map(x,y) && TILE_MAP[x][y].type == Tiles.EMPTY){
+          TILE_MAP[x][y] = new Tile(x,y,Tiles.MOSSED_FULL); 
+         }
+       }
+    }
+  }
+  
   //Step - player on empty tile
   TILE_MAP[character.x][character.y] = new Tile(character.x,character.y,Tiles.EMPTY);
 }
