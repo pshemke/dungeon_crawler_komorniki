@@ -7,6 +7,8 @@ PImage wall_gold_txt;
 PImage floor_gold_txt;
 
 PImage player_sheet;
+PImage select_sheet;
+PImage[] select = new PImage[4];
 PImage[] player_idle = new PImage[2];
 PImage[] player_walking = new PImage[4];
 
@@ -42,8 +44,9 @@ void setup(){
   wall_gold_txt = loadImage("src/textures/wall_gold.png");
   floor_gold_txt = loadImage("src/textures/floor_tile_gold.png");
   player_sheet = loadImage("src/textures/AnimationSheet_Character.png");
+  select_sheet = loadImage("src/textures/Spritesheets/Spritesheet_UI_Flat_Select_02.png");
   
-  load_player_sheet();
+  load_sheet();
   
   player = player_idle[0];
 
@@ -162,12 +165,16 @@ void generator(){
   TILE_MAP[character.x][character.y] = new Tile(character.x,character.y,Tiles.EMPTY);
 }
 
-void load_player_sheet(){
+void load_sheet(){
   for(int i =0; i<2; i++){
     player_idle[i] = player_sheet.get(0,32*i,32,32);
   }
   
   for(int i =0; i<4; i++){
     player_walking[i] = player_sheet.get(64,32*i,32,32);
+  }
+  
+  for(int i=0;i<4;i++){
+    select[i] = select_sheet.get(32*i,0,32,32);
   }
 }

@@ -1,4 +1,7 @@
 public class Tile{
+  int frame_count=0;
+  int frame_wait=0;
+  
   Tiles type;
   int x;
   int y;
@@ -90,6 +93,15 @@ public class Tile{
       String desc_name = "Name: " + name;
       text(desc_name, 0, 620);
       
+      image(select[frame_count],mouseX - mouseX %32,mouseY - mouseY %32);
+      frame_wait++;
+      if(frame_wait > 10){
+      frame_count++;
+      frame_wait=0;
+      }
+      if(frame_count > 3){
+        frame_count = 0;     
+      }
       
     }
   }
