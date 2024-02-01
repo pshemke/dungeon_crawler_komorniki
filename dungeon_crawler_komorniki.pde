@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 PImage empty_txt;
 PImage lava_txt;
 PImage mossed_full_txt;
@@ -16,6 +19,9 @@ PImage player;
 
 int X_TILES_NUMBER = 33;
 int Y_TILES_NUMBER = 18;
+
+Vector<Item> backpack = new Vector<Item>();
+Vector<Item> ground_items = new Vector<Item>();
 
 enum Tiles{
  EMPTY,
