@@ -82,5 +82,14 @@ public class Player{
     //mining
     image(item_sheet.get(32*5,32*4,32,32),33*32,1*32);
     text(this.mining,34*32 + 5,2*32 - 5);
+    //defence
+    image(item_sheet.get(32*1,32*7,32,32),33*32,2*32);
+    text(this.defence,34*32 + 5,3*32 - 5);
+    //hp
+    image(item_sheet.get(32*0,32*1,32,32),33*32,3*32);
+    text(this.hp,34*32 + 5,4*32 - 5);
+    //gold
+    image(item_sheet.get(32*3,32*17,32,32),33*32,4*32);
+    text(this.gold,34*32 + 5,5*32 - 5);
   }
 }
