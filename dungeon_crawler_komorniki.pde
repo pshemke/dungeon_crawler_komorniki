@@ -9,6 +9,7 @@ PImage wall_txt;
 PImage wall_gold_txt;
 PImage floor_gold_txt;
 
+PImage item_sheet;
 PImage player_sheet;
 PImage select_sheet;
 PImage[] select = new PImage[4];
@@ -51,6 +52,7 @@ void setup(){
   floor_gold_txt = loadImage("src/textures/floor_tile_gold.png");
   player_sheet = loadImage("src/textures/AnimationSheet_Character.png");
   select_sheet = loadImage("src/textures/Spritesheets/Spritesheet_UI_Flat_Select_02.png");
+  item_sheet = loadImage("src/textures/transparent_icon.png");
   
   load_sheet();
   
@@ -72,7 +74,7 @@ void draw(){
   
   character.animate();
   character.disp();
-  
+  character.show_stats();
 }
 
 void keyPressed(){

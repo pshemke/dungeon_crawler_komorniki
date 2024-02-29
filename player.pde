@@ -10,6 +10,7 @@ public class Player{
   int damage = 1;
   int mining = 1;
   int defence = 0;
+  int hp = 10;
   int gold = 0;
   
   
@@ -71,4 +72,24 @@ public class Player{
      }
   }
   
+  
+  void show_stats(){
+    fill(255);
+    textSize(32);
+    //damage
+    image(item_sheet.get(32*4,32*1,32,32),33*32,0*32);
+    text(this.damage,34*32 + 5,1*32 - 5);
+    //mining
+    image(item_sheet.get(32*5,32*4,32,32),33*32,1*32);
+    text(this.mining,34*32 + 5,2*32 - 5);
+    //defence
+    image(item_sheet.get(32*1,32*7,32,32),33*32,2*32);
+    text(this.defence,34*32 + 5,3*32 - 5);
+    //hp
+    image(item_sheet.get(32*0,32*1,32,32),33*32,3*32);
+    text(this.hp,34*32 + 5,4*32 - 5);
+    //gold
+    image(item_sheet.get(32*3,32*17,32,32),33*32,4*32);
+    text(this.gold,34*32 + 5,5*32 - 5);
+  }
 }
