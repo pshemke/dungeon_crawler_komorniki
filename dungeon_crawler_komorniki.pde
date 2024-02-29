@@ -75,6 +75,11 @@ void draw(){
   character.animate();
   character.disp();
   character.show_stats();
+  for(Item item : ground_items){
+    if(TILE_MAP[item.x][item.y].visible){
+   item.disp_map(); 
+    }
+  }
 }
 
 void keyPressed(){
@@ -106,6 +111,14 @@ void generator(){
        for(int y = cave_y - cave_width; y < cave_height + cave_y + 1; y++){
          if(is_on_map(x,y)){
           TILE_MAP[x][y] = new Tile(x,y,Tiles.EMPTY); 
+          
+          float item_roll = random(100);
+          if(item_roll < 5.0){
+           ground_items.add(new WoodenSword(x,y)); 
+          }else if(item_roll < 9.0){
+            ground_items.add(new GoldPouch(x,y));
+          }
+          
          }
        }
     }
