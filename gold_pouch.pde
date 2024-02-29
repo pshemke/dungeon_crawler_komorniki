@@ -2,7 +2,7 @@ class GoldPouch extends Item{
 
   GoldPouch(int x, int y){
     name = "Gold Pouch";
-    icon = get_item(12,11);
+    icon = get_item(11,12);
     value= 100;
     this.x = x;
     this.y = y;
