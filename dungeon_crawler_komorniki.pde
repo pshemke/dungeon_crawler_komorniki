@@ -87,6 +87,7 @@ void keyPressed(){
  for(Item item : ground_items){
     if(character.x == item.x && character.y == item.y){
    item.use(character); 
+   backpack.add(item);
    ground_items.remove(item);
    break;
     }
