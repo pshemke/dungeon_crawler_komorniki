@@ -9,5 +9,5 @@ class GoldChest extends Item{
   }
     
 
-  public void use(Player player){player.gold += (int)random(150)+250;};
+  public void use(Player player){player.gold += (int)random(130)+100;};
 }

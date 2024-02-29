@@ -9,5 +9,5 @@ class GoldPouch extends Item{
   }
     
 
-  public void use(Player player){player.gold += (int)random(20)+10;};
+  public void use(Player player){player.gold += (int)random(5)+7;};
 }
