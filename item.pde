@@ -13,7 +13,7 @@ class Item{
   int x;
   int y;
   
-  public void use(){};
+  public void use(Player player){};
   public void disp_map(){
   image(icon, x*32, y*32);
   };

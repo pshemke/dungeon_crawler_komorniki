@@ -14,6 +14,8 @@ public class Tile{
   int gold = 0;
   boolean breakable = false;
   
+  Item item = null;
+  
   Tile(int _x, int _y, Tiles _type){
    x = _x;
    y = _y;
