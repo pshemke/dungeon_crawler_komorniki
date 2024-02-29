@@ -84,6 +84,13 @@ void draw(){
 
 void keyPressed(){
  character.move(key); 
+ for(Item item : ground_items){
+    if(character.x == item.x && character.y == item.y){
+   item.use(character); 
+   ground_items.remove(item);
+   break;
+    }
+  }
 }
 
 boolean is_on_map(int x, int y){
