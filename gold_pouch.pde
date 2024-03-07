@@ -7,6 +7,15 @@ class GoldPouch extends Item{
     this.x = x;
     this.y = y;
   }
+  
+   GoldPouch(GoldPouch copy){
+    this.name = copy.name;
+    this.icon = copy.icon;
+    this.valu = copy.value;
+    this.x = copy.x;
+    this.y = copy.y;
+  }
+  
     
 
   public void use(Player player){player.gold += (int)random(5)+7;};

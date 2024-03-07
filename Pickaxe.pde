@@ -7,6 +7,15 @@ class Pickaxe extends Item{
     this.x = x;
     this.y = y;
   }
+  
+    Pickaxe(Pickaxe copy){
+    this.name = copy.name;
+    this.icon = copy.icon;
+    this.valu = copy.value;
+    this.x = copy.x;
+    this.y = copy.y;
+  }
+  
     
 
   public void use(Player player){player.mining +=2;};
