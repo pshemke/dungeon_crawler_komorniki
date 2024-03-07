@@ -7,6 +7,14 @@ class PolishMeal extends Item{
     this.y = x;
   }
   
+  PolishMeal(PolishMeal copy){
+    this.name = copy.name;
+    this.icon = copy.icon;
+    this.value = copy.value;
+    this.x = copy.x;
+    this.y = copy.y;
+  }
+  
   public void use(Player player){
   player.hp +=20;
   player.defence -=2;

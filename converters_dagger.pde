@@ -7,6 +7,14 @@ class ConvertersDagger extends Item{
     this.y = x;
   }
   
+  ConvertersDagger(ConvertersDagger copy){
+    this.name = copy.name;
+    this.icon = copy.icon;
+    this.value = copy.value;
+    this.x = copy.x;
+    this.y = copy.y;
+  }
+  
   public void use(Player player){
   player.damage +=5;
   player.hp -=4;

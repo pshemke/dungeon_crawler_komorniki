@@ -44,6 +44,9 @@ public class Player{
     }else if(map[x][y].breakable){
       map[x][y].hp -= mining;
       if(map[x][y].hp < 1){
+        //if(map[x][y].gold > 0){
+          //player.gold += map[x][y].gold;
+      //  }
         map[x][y] = new Tile(x,y,Tiles.EMPTY);
       }
     }

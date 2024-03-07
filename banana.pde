@@ -7,6 +7,14 @@ class Banana extends Item{
     this.y = x;
   }
   
+  Banana(Banana copy){
+    this.name = copy.name;
+    this.icon = copy.icon;
+    this.value = copy.value;
+    this.x = copy.x;
+    this.y = copy.y;
+  }
+  
   public void use(Player player){
   player.hp +=7;
   print("potassium.");
