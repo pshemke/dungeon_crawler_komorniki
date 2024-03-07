@@ -24,6 +24,8 @@ int Y_TILES_NUMBER = 18;
 Vector<Item> backpack = new Vector<Item>();
 Vector<Item> ground_items = new Vector<Item>();
 
+ItemPool pool = new ItemPool();
+
 enum Tiles{
  EMPTY,
  LAVA,
