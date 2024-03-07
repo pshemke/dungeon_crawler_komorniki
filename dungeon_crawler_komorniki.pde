@@ -58,6 +58,11 @@ void setup(){
   
   load_sheet();
   
+  pool.add_item(new WoodenSword(0,0), 4);
+  pool.add_item(new GoldPouch(0,0), 5);
+  pool.add_item(new Banana(0,0), 20);
+  pool.add_item(new Pickaxe(0,0), 10);
+  
   player = player_idle[0];
 
   generator();
@@ -124,9 +129,7 @@ void generator(){
           
           float item_roll = random(100);
           if(item_roll < 5.0){
-           ground_items.add(new WoodenSword(x,y)); 
-          }else if(item_roll < 9.0){
-            ground_items.add(new GoldPouch(x,y));
+           ground_items.add(pool.loot()); 
           }
           
          }
