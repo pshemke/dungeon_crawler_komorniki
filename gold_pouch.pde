@@ -11,7 +11,7 @@ class GoldPouch extends Item{
    GoldPouch(GoldPouch copy){
     this.name = copy.name;
     this.icon = copy.icon;
-    this.valu = copy.value;
+    this.value = copy.value;
     this.x = copy.x;
     this.y = copy.y;
   }
