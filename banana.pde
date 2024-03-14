@@ -4,7 +4,7 @@ class Banana extends Item{
     icon = get_item(1,14);
     value = 100;
     this.x = x;
-    this.y = x;
+    this.y = y;
   }
   
   Item make_copy(int new_x, int new_y){return new Banana(new_x, new_y); };

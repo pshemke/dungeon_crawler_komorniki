@@ -129,7 +129,7 @@ void generator(){
           
           float item_roll = random(100);
           if(item_roll < 5.0){
-           ground_items.add(pool.loot()); 
+           ground_items.add(pool.loot(x,y)); 
           }
           
          }
