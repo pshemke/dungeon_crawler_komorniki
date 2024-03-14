@@ -12,6 +12,7 @@ PImage floor_gold_txt;
 PImage item_sheet;
 PImage player_sheet;
 PImage select_sheet;
+PImage moth_sheet;
 PImage[] select = new PImage[4];
 PImage[] player_idle = new PImage[2];
 PImage[] player_walking = new PImage[4];
@@ -54,6 +55,7 @@ void setup(){
   floor_gold_txt = loadImage("src/textures/floor_tile_gold.png");
   player_sheet = loadImage("src/textures/AnimationSheet_Character.png");
   select_sheet = loadImage("src/textures/Spritesheets/Spritesheet_UI_Flat_Select_02.png");
+  moth_sheet = loadImage("src/textures/mothanims.png");
   item_sheet = loadImage("src/textures/transparent_icon.png");
   
   load_sheet();
