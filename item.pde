@@ -18,5 +18,6 @@ class Item{
   image(icon, x*32, y*32);
   };
   public void disp_back(){};
+  public Item make_copy(int new_x, int new_y){return null; };
   
 }

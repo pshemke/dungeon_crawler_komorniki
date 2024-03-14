@@ -8,13 +8,7 @@ class Pickaxe extends Item{
     this.y = y;
   }
   
-    Pickaxe(Pickaxe copy){
-    this.name = copy.name;
-    this.icon = copy.icon;
-    this.value = copy.value;
-    this.x = copy.x;
-    this.y = copy.y;
-  }
+  Item make_copy(int new_x, int new_y){return new Pickaxe(new_x,new_y); };
   
     
 

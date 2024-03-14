@@ -7,13 +7,7 @@ class WoodenSword extends Item{
   this.y = y;
   }
   
-  WoodenSword(WoodenSword copy){
-    this.name = copy.name;
-    this.icon = copy.icon;
-    this.value = copy.value;
-    this.x = copy.x;
-    this.y = copy.y;
-  }
+  Item make_copy(int new_x, int new_y){return new WoodenSword(new_x,new_y); };
   
   public void use(Player player){player.damage += (int)random(5)+2;};
 }
