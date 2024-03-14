@@ -7,13 +7,7 @@ class ConvertersDagger extends Item{
     this.y = x;
   }
   
-  ConvertersDagger(ConvertersDagger copy){
-    this.name = copy.name;
-    this.icon = copy.icon;
-    this.value = copy.value;
-    this.x = copy.x;
-    this.y = copy.y;
-  }
+  Item make_copy(int new_x, int new_y){return new ConvertersDagger(new_x,new_y); };
   
   public void use(Player player){
   player.damage +=5;
