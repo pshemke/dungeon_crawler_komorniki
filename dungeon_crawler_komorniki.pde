@@ -27,6 +27,7 @@ Vector<Item> ground_items = new Vector<Item>();
 Vector<Mob> monsters = new Vector<Mob>();
 
 ItemPool pool = new ItemPool();
+MobPool mob_pool = new MobPool();
 
 enum Tiles{
  EMPTY,
@@ -66,6 +67,8 @@ void setup(){
   pool.add_item(new Banana(0,0), 20);
   pool.add_item(new Pickaxe(0,0), 10);
   
+  mob_pool.add_mob(new Moth(0,0), 10);
+  
   player = player_idle[0];
 
   generator();
@@ -90,6 +93,11 @@ void draw(){
    item.disp_map(); 
     }
   }
+  for(Mob mob : monsters){
+    if(TILE_MAP[mob.x][mob.y].visible){
+   mob.disp_map(); 
+    }
+  }
 }
 
 void keyPressed(){
@@ -101,6 +109,9 @@ void keyPressed(){
    ground_items.remove(item);
    break;
     }
+  }
+  for(Mob mob : monsters){
+   mob.move(TILE_MAP,character,monsters); 
   }
 }
 
@@ -133,6 +144,10 @@ void generator(){
           float item_roll = random(100);
           if(item_roll < 5.0){
            ground_items.add(pool.loot(x,y)); 
+          }
+          float mob_roll = random(100);
+          if(mob_roll < 8.0){
+           monsters.add(mob_pool.spawn(x,y)); 
           }
           
          }

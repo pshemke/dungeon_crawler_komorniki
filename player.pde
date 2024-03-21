@@ -29,10 +29,32 @@ public class Player{
   }
   void move(char input){
     switch (input){
-      case 'a': if(is_on_map(x-1,y)){tile_behavior(x-1,y,TILE_MAP);} break;
-      case 'd': if(is_on_map(x+1,y)){tile_behavior(x+1,y,TILE_MAP);} break;
-      case 'w': if(is_on_map(x,y-1)){tile_behavior(x,y-1,TILE_MAP);} break;
-      case 's': if(is_on_map(x,y+1)){tile_behavior(x,y+1,TILE_MAP);} break;
+      case 'a': if(is_on_map(x-1,y)){
+        if(is_mob(x-1,y)){
+          attack(x-1,y);
+        }else{
+      tile_behavior(x-1,y,TILE_MAP);}
+      } 
+      break;
+      case 'd': if(is_on_map(x+1,y)){
+       if(is_mob(x-1,y)){
+          attack(x-1,y);
+        }else{
+      tile_behavior(x+1,y,TILE_MAP);}
+    } 
+      break;
+      case 'w': if(is_on_map(x,y-1)){
+       if(is_mob(x-1,y)){
+          attack(x-1,y);
+        }else{
+      tile_behavior(x,y-1,TILE_MAP);}
+    } break;
+      case 's': if(is_on_map(x,y+1)){ if(is_mob(x-1,y)){
+          attack(x-1,y);
+        }else{
+      tile_behavior(x,y+1,TILE_MAP);}
+    }
+    break;
     }
     this.discover(TILE_MAP);
   }
@@ -94,5 +116,26 @@ public class Player{
     //gold
     image(item_sheet.get(32*3,32*17,32,32),33*32,4*32);
     text(this.gold,34*32 + 5,5*32 - 5);
+  }
+  
+  Boolean is_mob(int x, int y){
+    for(int i = 0; i < monsters.size(); i++){
+     if (monsters.get(i).x == x && monsters.get(i).y == y){
+       return true;
+     }
+    }
+    return false;
+  }
+  
+  void attack(int x, int y){
+    for(int i = 0; i < monsters.size(); i++){
+     if (monsters.get(i).x == x && monsters.get(i).y == y){
+       monsters.get(i).hp -= this.damage;
+       if( monsters.get(i).hp <= 0){
+         monsters.remove(monsters.get(i));
+       break;
+       }
+     }
+    }
   }
 }
