@@ -10,7 +10,7 @@ class Moth extends Mob{
 
   Mob make_copy(int new_x, int new_y){return new Moth(new_x,new_y); };
   
-  void move(Tile[][] map, Player player){
+  void move(Tile[][] map, Player player, Vector<Mob> mobs){
     if(player.x > this.x && map[this.x+1][this.y].walkable){
       if(player.x - this.x == 1){
        player.hp -= this.attack; 

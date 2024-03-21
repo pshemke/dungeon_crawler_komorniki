@@ -24,6 +24,7 @@ int Y_TILES_NUMBER = 18;
 
 Vector<Item> backpack = new Vector<Item>();
 Vector<Item> ground_items = new Vector<Item>();
+Vector<Mob> monsters = new Vector<Mob>();
 
 ItemPool pool = new ItemPool();
 
