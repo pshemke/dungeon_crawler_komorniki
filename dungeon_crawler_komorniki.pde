@@ -13,6 +13,7 @@ PImage item_sheet;
 PImage player_sheet;
 PImage select_sheet;
 PImage moth_sheet;
+PImage frogsheet;
 PImage ants;
 PImage[] select = new PImage[4];
 PImage[] player_idle = new PImage[2];
@@ -61,6 +62,7 @@ void setup(){
   moth_sheet = loadImage("src/textures/mothanims.png");
   item_sheet = loadImage("src/textures/transparent_icon.png");
   ants = loadImage("src/textures/ants.png");
+  frogsheet = loadImage("src/textures/frogsheet.png");
   
   load_sheet();
   
@@ -70,6 +72,7 @@ void setup(){
   pool.add_item(new Pickaxe(0,0), 10);
   
   mob_pool.add_mob(new Moth(0,0), 10);
+  mob_pool.add_mob(new Frog(0,0), 20);
   
   player = player_idle[0];
 
