@@ -62,7 +62,7 @@ void setup(){
   moth_sheet = loadImage("src/textures/mothanims.png");
   item_sheet = loadImage("src/textures/transparent_icon.png");
   ants = loadImage("src/textures/ants.png");
-    item_sheet = loadImage("src/textures/slime_sheet.png");
+  slime_sheet = loadImage("src/textures/slime_sheet.png");
   
   load_sheet();
   
