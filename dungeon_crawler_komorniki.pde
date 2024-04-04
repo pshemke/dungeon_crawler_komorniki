@@ -13,6 +13,7 @@ PImage item_sheet;
 PImage player_sheet;
 PImage select_sheet;
 PImage moth_sheet;
+PImage ants;
 PImage[] select = new PImage[4];
 PImage[] player_idle = new PImage[2];
 PImage[] player_walking = new PImage[4];
@@ -59,6 +60,7 @@ void setup(){
   select_sheet = loadImage("src/textures/Spritesheets/Spritesheet_UI_Flat_Select_02.png");
   moth_sheet = loadImage("src/textures/mothanims.png");
   item_sheet = loadImage("src/textures/transparent_icon.png");
+  ants = loadImage("src/textures/ants.png");
   
   load_sheet();
   
