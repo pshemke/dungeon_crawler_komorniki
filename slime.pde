@@ -8,7 +8,7 @@ class Slime extends Mob{
     this.icon = slime_sheet.get(0,0,32,32);
   }
 
-  Mob make_copy(int new_x, int new_y){return new Moth(new_x,new_y); };
+  Mob make_copy(int new_x, int new_y){return new Slime(new_x,new_y); };
   
   void move(Tile[][] map, Player player, Vector<Mob> mobs){
     if(player.x > this.x && map[this.x+1][this.y].walkable && !is_mob(x+1,y,mobs)){
