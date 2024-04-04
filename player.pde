@@ -37,20 +37,20 @@ public class Player{
       } 
       break;
       case 'd': if(is_on_map(x+1,y)){
-       if(is_mob(x-1,y)){
-          attack(x-1,y);
+       if(is_mob(x+1,y)){
+          attack(x+1,y);
         }else{
       tile_behavior(x+1,y,TILE_MAP);}
     } 
       break;
       case 'w': if(is_on_map(x,y-1)){
-       if(is_mob(x-1,y)){
-          attack(x-1,y);
+       if(is_mob(x,y-1)){
+          attack(x,y-1);
         }else{
       tile_behavior(x,y-1,TILE_MAP);}
     } break;
-      case 's': if(is_on_map(x,y+1)){ if(is_mob(x-1,y)){
-          attack(x-1,y);
+      case 's': if(is_on_map(x,y+1)){ if(is_mob(x,y+1)){
+          attack(x,y+1);
         }else{
       tile_behavior(x,y+1,TILE_MAP);}
     }
