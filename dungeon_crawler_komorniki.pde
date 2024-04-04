@@ -70,6 +70,7 @@ void setup(){
   pool.add_item(new Pickaxe(0,0), 10);
   
   mob_pool.add_mob(new Moth(0,0), 10);
+  mob_pool.add_mob(new Ants(0,0), 20);
   
   player = player_idle[0];
 
