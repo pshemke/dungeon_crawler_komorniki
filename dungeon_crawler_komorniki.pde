@@ -9,6 +9,7 @@ PImage wall_txt;
 PImage wall_gold_txt;
 PImage floor_gold_txt;
 
+PImage slime_sheet;
 PImage item_sheet;
 PImage player_sheet;
 PImage select_sheet;
