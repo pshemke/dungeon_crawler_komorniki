@@ -14,6 +14,7 @@ PImage player_sheet;
 PImage select_sheet;
 PImage moth_sheet;
 PImage frogsheet;
+PImage slime_sheet;
 PImage ants;
 PImage[] select = new PImage[4];
 PImage[] player_idle = new PImage[2];
@@ -63,6 +64,7 @@ void setup(){
   item_sheet = loadImage("src/textures/transparent_icon.png");
   ants = loadImage("src/textures/ants.png");
   frogsheet = loadImage("src/textures/frogsheet.png");
+  slime_sheet = loadImage("src/textures/slime_sheet.png");
   
   load_sheet();
   
@@ -73,6 +75,8 @@ void setup(){
   
   mob_pool.add_mob(new Moth(0,0), 10);
   mob_pool.add_mob(new Frog(0,0), 20);
+  mob_pool.add_mob(new Slime(0,0), 20);
+  mob_pool.add_mob(new Ants(0,0), 20);
   
   player = player_idle[0];
 
@@ -86,7 +90,7 @@ void draw(){
     for(int i = 0; i < X_TILES_NUMBER;i++){
       for(int j = 0; j < Y_TILES_NUMBER; j++){
         TILE_MAP[i][j].disp();
-        TILE_MAP[i][j].desc();
+        TILE_MAP[i][j].desc(monsters);
     }
   }
   

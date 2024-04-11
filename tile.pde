@@ -88,13 +88,15 @@ public class Tile{
     }
   }
   
-  void desc(){
+  void desc(Vector<Mob> monsters){
     fill(0);
     textSize(40);
     if(mouseX <= (x+1)*32 && mouseX > x*32 && mouseY <= (y+1)*32 && mouseY > y*32 && visible){
+      //tile information
       String desc_name = "Name: " + name;
       text(desc_name, 0, 620);
       
+      //select animation
       image(select[frame_count],mouseX - mouseX %32,mouseY - mouseY %32);
       frame_wait++;
       if(frame_wait > 10){
@@ -105,6 +107,14 @@ public class Tile{
         frame_count = 0;     
       }
       
+      //mob information
+      for(Mob mob : monsters){
+        if( mob.x == this.x && mob.y == this.y){
+          print("jestem tu");
+          fill(255);
+          text(mob.name, (x+1)*32, y*32);
+        }
+      }
     }
   }
 };
