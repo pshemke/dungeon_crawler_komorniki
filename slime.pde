@@ -5,6 +5,7 @@ class Slime extends Mob{
     this.hp = 5;
     this.attack = 1;
     this.name = "Slime";
+    this.desc = "This is a slime";
     this.icon = slime_sheet.get(0,0,32,32);
   }
 

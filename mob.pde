@@ -2,6 +2,7 @@ class Mob{
   int hp = 1;
   int attack = 1;
   String name = "name";
+  String desc = "desc";
   
   PImage icon;
   
