@@ -5,6 +5,7 @@ class Moth extends Mob{
     this.hp = 5;
     this.attack = 1;
     this.name = "Moth";
+    this.desc = "This is a moth";
     this.icon = moth_sheet.get(0,0,32,32);
   }
 

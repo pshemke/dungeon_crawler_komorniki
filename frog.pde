@@ -5,6 +5,7 @@ class Frog extends Mob{
     this.hp = 7;
     this.attack = 1;
     this.name = "Frog";
+    this.desc = "This is a forg";
     this.icon = frogsheet.get(0,0,32,32);
   }
 

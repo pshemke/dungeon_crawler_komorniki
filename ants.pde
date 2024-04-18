@@ -5,6 +5,7 @@ class Ants extends Mob{
     this.hp = 5;
     this.attack = 1;
     this.name = "Ants";
+    this.desc = "These are ants";
     this.icon = ants.get(0,0,32,32);
   }
 
