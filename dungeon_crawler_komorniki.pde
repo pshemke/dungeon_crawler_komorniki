@@ -22,6 +22,9 @@ PImage[] player_walking = new PImage[4];
 
 PImage player;
 
+//"mob", "left_corner", "right_corner"
+String display_mode = "mob";
+
 int X_TILES_NUMBER = 33;
 int Y_TILES_NUMBER = 18;
 
@@ -90,7 +93,6 @@ void draw(){
     for(int i = 0; i < X_TILES_NUMBER;i++){
       for(int j = 0; j < Y_TILES_NUMBER; j++){
         TILE_MAP[i][j].disp();
-        TILE_MAP[i][j].desc(monsters);
     }
   }
   
@@ -105,6 +107,11 @@ void draw(){
   for(Mob mob : monsters){
     if(TILE_MAP[mob.x][mob.y].visible){
    mob.disp_map(); 
+    }
+  }
+  for(int i = 0; i < X_TILES_NUMBER;i++){
+      for(int j = 0; j < Y_TILES_NUMBER; j++){
+        TILE_MAP[i][j].desc(monsters);
     }
   }
 }

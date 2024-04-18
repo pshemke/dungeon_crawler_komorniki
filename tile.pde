@@ -108,13 +108,51 @@ public class Tile{
       }
       
       //mob information
-      for(Mob mob : monsters){
+      if (display_mode == "mob"){
+       for(Mob mob : monsters){
         if( mob.x == this.x && mob.y == this.y){
           print("jestem tu");
           fill(255);
-          text(mob.name, (x+1)*32, y*32);
+          textAlign(CENTER);
+          text(mob.name, (this.x*32)+16, ((this.y-1)*32)-24);
+          image(item_sheet.get(32*0,32*1,32,32), (this.x*32)-16, ((this.y)*32)-49);
+          image(item_sheet.get(32*4,32*1,32,32), (this.x*32)-16, ((this.y)*32)-25);
+          
+          textAlign(LEFT);
+          if(mob.hp >= 4){
+            fill(0,255,0);
+          }else if(mob.hp <= 3){
+            fill(255,255,0);
+          }else if(mob.hp <= 2){
+            fill(255,0,0);
+          }
+          textSize(25);
+          text(mob.hp, (this.x*32)+30, ((this.y-1)*32)+8);
+          fill(255,0,0);
+          text(mob.attack, (this.x*32)+30, ((this.y-1)*32)+33);
         }
+      } 
+      }else if(display_mode == "left_corner"){
+              for(Mob mob : monsters){
+        if( mob.x == this.x && mob.y == this.y){
+             String mob_name = "Mob: " + mob.name;
+             String mob_health = "health: " + mob.hp;
+             String desc = "info: " + mob.desc;
+             textSize(30);
+             image(item_sheet.get(32*0,32*0,32,32),270,624);
+             text(mob_name, 300, 650);
+             textSize(25);
+               image(item_sheet.get(32*0,32*13,32,32),270,684);
+               text(desc, 300, 710);
+                fill(255);
+          textSize(25);
+             image(item_sheet.get(32*0,32*1,32,32),270,654);
+          text(mob_health,300,680);
+                
+              }
       }
+      }
+      
     }
   }
 };
