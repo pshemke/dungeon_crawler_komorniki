@@ -23,7 +23,7 @@ PImage[] player_walking = new PImage[4];
 PImage player;
 
 //"mob", "left_corner", "right_corner"
-String display_mode = "mob";
+String display_mode = "left_corner";
 
 int X_TILES_NUMBER = 33;
 int Y_TILES_NUMBER = 18;

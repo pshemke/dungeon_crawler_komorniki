@@ -13,7 +13,7 @@ public class Tile{
   int hp = 0;
   int gold = 0;
   boolean breakable = false;
-  
+  String descr = "descr";
   Item item = null;
   
   Tile(int _x, int _y, Tiles _type){
@@ -23,12 +23,15 @@ public class Tile{
    switch (type){
      case EMPTY:
      name = "Empty";
+       this.descr = "Nothing here";
      break;
      case LAVA:
      damage = 5;
      name = "Lava";
+     this.descr = "This is lava";
      break;
      case WALL:
+     this.descr = "This is a wall";
      walkable = false;
      breakable = true;
      hp = 5;
@@ -37,10 +40,12 @@ public class Tile{
      case MOSSED_FULL:
      regen = 25;
      name = "Mossed Out";
+      this.descr = "This is moss";
      break;
      case MOSSED:
      regen = 5;
      name = "Mossed";
+      this.descr = "This is moss";
      break;
      case WALL_GOLD:
      walkable = false;
@@ -48,10 +53,12 @@ public class Tile{
      hp = 7;
      gold = 3 + (int)random(5);
      name = "Wall Gold";
+      this.descr = "This is a wall with gold";
      break;
      case FLOOR_GOLD:
      gold = 1 + (int)random(2);
      name = "Floor Gold";
+      this.descr = "GOLD ON THE FLOOR";
      break;
    }
   }
@@ -95,6 +102,17 @@ public class Tile{
       //tile information
       String desc_name = "Name: " + name;
       text(desc_name, 0, 620);
+             String tile_health = "health: " + hp;
+             String description = "info: " + descr;
+             textSize(30);
+             textSize(25);
+               image(item_sheet.get(32*0,32*13,32,32),0,654);
+              text(description, 30, 680);
+                fill(255);
+          textSize(25);
+             image(item_sheet.get(32*0,32*1,32,32),0,624);
+          text(tile_health,30,650);
+                
       
       //select animation
       image(select[frame_count],mouseX - mouseX %32,mouseY - mouseY %32);
