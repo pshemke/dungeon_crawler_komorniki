@@ -93,6 +93,7 @@ void setup(){
 }
 
 void draw(){
+    rect(285,575,5,445);
   background(12, 31, 89);
     for(int i = 0; i < X_TILES_NUMBER;i++){
       for(int j = 0; j < Y_TILES_NUMBER; j++){

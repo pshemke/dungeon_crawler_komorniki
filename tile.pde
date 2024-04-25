@@ -39,12 +39,12 @@ public class Tile{
      break;
      case MOSSED_FULL:
      regen = 25;
-     name = "Mossed Out";
+     name = "Mossed";
       this.descr = "This is moss";
      break;
      case MOSSED:
      regen = 5;
-     name = "Mossed";
+     name = "Moss";
       this.descr = "This is moss";
      break;
      case WALL_GOLD:
