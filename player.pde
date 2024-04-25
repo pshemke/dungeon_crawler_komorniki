@@ -72,6 +72,11 @@ public class Player{
         map[x][y] = new Tile(x,y,Tiles.EMPTY);
       }
     }
+    if(map[this.x][this.y].type == Tiles.LADDER){
+      ground_items.clear();
+      monsters.clear();
+      generator();
+    }
   }
   
   

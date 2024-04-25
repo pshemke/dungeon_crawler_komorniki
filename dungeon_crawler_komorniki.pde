@@ -8,6 +8,7 @@ PImage mossed_txt;
 PImage wall_txt;
 PImage wall_gold_txt;
 PImage floor_gold_txt;
+PImage ladder_txt;
 
 PImage item_sheet;
 PImage player_sheet;
@@ -43,6 +44,7 @@ enum Tiles{
  WALL,
  WALL_GOLD,
  FLOOR_GOLD,
+ LADDER,
  MAX
 }
 
@@ -69,6 +71,7 @@ void setup(){
   ants = loadImage("src/textures/ants.png");
   frogsheet = loadImage("src/textures/frogsheet.png");
   slime_sheet = loadImage("src/textures/slime_sheet.png");
+  ladder_txt = loadImage("src/textures/ladder-32x32.png");
   
   load_sheet();
   
@@ -170,6 +173,14 @@ void generator(){
          }
        }
     }
+  }
+  while(true){
+    int ladder_x = (int)random(X_TILES_NUMBER);
+    int ladder_y = (int)random(Y_TILES_NUMBER);
+    if(TILE_MAP[ladder_x][ladder_y].type == Tiles.EMPTY){
+      TILE_MAP[ladder_x][ladder_y] = new Tile(ladder_x,ladder_y,Tiles.LADDER); 
+      break;
+    }   
   }
   //Step 3 - generate lava lakes
   int lava_number = 10;

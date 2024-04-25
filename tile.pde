@@ -60,6 +60,10 @@ public class Tile{
      name = "Floor Gold";
       this.descr = "Floor with gold";
      break;
+     case LADDER:
+       name = "Ladder";
+       this.descr = "Go to next floor";
+       break;
    }
   }
   
@@ -88,6 +92,8 @@ public class Tile{
      case FLOOR_GOLD:
      image(floor_gold_txt, x*32, y*32);
      break;
+     case LADDER:
+     image(ladder_txt, x*32, y*32);
       }
     }else{
      fill(0);
