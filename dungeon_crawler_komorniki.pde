@@ -134,6 +134,53 @@ void keyPressed(){
   for(Mob mob : monsters){
    mob.move(TILE_MAP,character,monsters); 
   }
+  
+  if(TILE_MAP[character.x][character.y].name == "Lava") {
+    character.hp--;
+    character.stamina += 3;
+  }
+  if(key == 'K' ^ key == 'k') {
+    if(TILE_MAP[character.x][character.y].name == "Mossed Out") {
+      character.hp += 5;
+      TILE_MAP[character.x][character.y] = new Tile(character.x,character.y,Tiles.EMPTY);
+    }
+  }
+  if(key == 'E' ^ key == 'e') {
+    if(mouseX/32 > character.x && mouseY/32 > character.x) {
+      if(TILE_MAP[character.x + 2][character.y].walkable == true){
+        character.x += 2;
+      }else if(TILE_MAP[character.x + 1][character.y].walkable == true){
+        character.x += 1;
+      }else {
+      character.x += 0;
+      }
+    }else if(mouseX/32 < character.x && mouseY/32 > character.x) {
+      if(TILE_MAP[character.x][character.y + 2].walkable == true){
+        character.y += 2;
+      }else if(TILE_MAP[character.x][character.y + 1].walkable == true){
+        character.y += 1;
+      }else {
+      character.y += 0;
+      }
+    }else if(mouseX/32 > character.x && mouseY/32 < character.x) {
+      if(TILE_MAP[character.x][character.y - 2].walkable == true){
+        character.y -= 2;
+      }else if(TILE_MAP[character.x][character.y - 1].walkable == true){
+        character.y -= 1;
+      }else {
+      character.y -= 0;
+      }
+    }else if(mouseX/32 < character.x && mouseY/32 < character.x) {
+      if(TILE_MAP[character.x - 2][character.y].walkable == true){
+        character.x -= 2;
+      }else if(TILE_MAP[character.x - 1][character.y].walkable == true){
+        character.x -= 1;
+      }else {
+      character.x -= 0;
+      }
+    }
+    character.stamina --;
+  }
 }
 
 boolean is_on_map(int x, int y){
