@@ -15,7 +15,7 @@ public class Tile{
   boolean breakable = false;
   String descr = "descr";
   Item item = null;
-  
+
   Tile(int _x, int _y, Tiles _type){
    x = _x;
    y = _y;
@@ -167,19 +167,19 @@ public class Tile{
              String mob_health = "health: " + mob.hp;
              String desc = "info: " + mob.desc;
              textSize(30);
-             image(item_sheet.get(32*0,32*0,32,32),270,624);
+             image(item_sheet.get(32*0,32*0,32,32),280,624);
              text(mob_name, 300, 650);
               
              textSize(25);
-               image(item_sheet.get(32*0,32*13,32,32),270,684);
+               image(item_sheet.get(32*0,32*13,32,32),280,684);
                text(desc, 300, 710);
                 fill(255);
           textSize(25);
-             image(item_sheet.get(32*0,32*1,32,32),270,654);
+             image(item_sheet.get(32*0,32*1,32,32),280,654);
           text(mob_health,300,680);
           fill(227, 11, 188);
           textSize(40);
-           text("Mob", 300, 620);
+           text("Mob", 325, 620);
                 
               }
       }
