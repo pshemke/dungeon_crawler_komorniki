@@ -53,12 +53,12 @@ public class Tile{
      hp = 7;
      gold = 3 + (int)random(5);
      name = "Wall Gold";
-      this.descr = "This is a wall with gold";
+      this.descr = "wall with gold";
      break;
      case FLOOR_GOLD:
      gold = 1 + (int)random(2);
      name = "Floor Gold";
-      this.descr = "GOLD ON THE FLOOR";
+      this.descr = "Floor with gold";
      break;
    }
   }
@@ -100,12 +100,15 @@ public class Tile{
     textSize(40);
     if(mouseX <= (x+1)*32 && mouseX > x*32 && mouseY <= (y+1)*32 && mouseY > y*32 && visible){
       //tile information
+      fill(227, 11, 188);
       String desc_name = "Name: " + name;
       text(desc_name, 0, 620);
+        fill(225);
              String tile_health = "health: " + hp;
              String description = "info: " + descr;
              textSize(30);
              textSize(25);
+             
                image(item_sheet.get(32*0,32*13,32,32),0,654);
               text(description, 30, 680);
                 fill(255);
@@ -153,12 +156,14 @@ public class Tile{
       }else if(display_mode == "left_corner"){
               for(Mob mob : monsters){
         if( mob.x == this.x && mob.y == this.y){
+          fill(255);
              String mob_name = "Mob: " + mob.name;
              String mob_health = "health: " + mob.hp;
              String desc = "info: " + mob.desc;
              textSize(30);
              image(item_sheet.get(32*0,32*0,32,32),270,624);
              text(mob_name, 300, 650);
+              
              textSize(25);
                image(item_sheet.get(32*0,32*13,32,32),270,684);
                text(desc, 300, 710);
@@ -166,6 +171,9 @@ public class Tile{
           textSize(25);
              image(item_sheet.get(32*0,32*1,32,32),270,654);
           text(mob_health,300,680);
+          fill(227, 11, 188);
+          textSize(40);
+           text("Mob", 300, 620);
                 
               }
       }
