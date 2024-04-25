@@ -168,15 +168,15 @@ public class Tile{
              String desc = "info: " + mob.desc;
              textSize(30);
              image(item_sheet.get(32*0,32*0,32,32),280,624);
-             text(mob_name, 300, 650);
+             text(mob_name, 310, 650);
               
              textSize(25);
                image(item_sheet.get(32*0,32*13,32,32),280,684);
-               text(desc, 300, 710);
+               text(desc, 310, 710);
                 fill(255);
           textSize(25);
              image(item_sheet.get(32*0,32*1,32,32),280,654);
-          text(mob_health,300,680);
+          text(mob_health,310,680);
           fill(227, 11, 188);
           textSize(40);
            text("Mob", 325, 620);
