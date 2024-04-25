@@ -12,7 +12,7 @@ public class Player{
   int defence = 0;
   int hp = 10;
   int gold = 0;
-  
+  int stamina = 5;
   
   
   States state = States.IDLE;
@@ -121,6 +121,9 @@ public class Player{
     //gold
     image(item_sheet.get(32*3,32*17,32,32),33*32,4*32);
     text(this.gold,34*32 + 5,5*32 - 5);
+    //stamina
+    image(item_sheet.get(32*3,32*17,32,32),33*32,4*32);
+    text(this.stamina,34*32 + 5,6*32 - 5);
   }
   
   Boolean is_mob(int x, int y){
