@@ -17,8 +17,13 @@ PImage player_sheet;
 PImage select_sheet;
 PImage moth_sheet;
 PImage frogsheet;
+PImage salamander_sheet;
 PImage slime_sheet;
+PImage tsetsesheet;
 PImage ants;
+PImage magic_sheet;
+PImage magic_sheet2;
+PImage placeholder;
 PImage[] select = new PImage[4];
 PImage[] player_idle = new PImage[2];
 PImage[] player_walking = new PImage[4];
@@ -30,6 +35,7 @@ String display_mode = "left_corner";
 
 int X_TILES_NUMBER = 33;
 int Y_TILES_NUMBER = 18;
+int floor = 1;
 
 Vector<Item> backpack = new Vector<Item>();
 Vector<Item> ground_items = new Vector<Item>();
@@ -72,10 +78,16 @@ void setup(){
   item_sheet = loadImage("src/textures/transparent_icon.png");
   ants = loadImage("src/textures/ants.png");
   frogsheet = loadImage("src/textures/frogsheet.png");
+  salamander_sheet = loadImage("src/textures/Jungle/salamandersheet.png");
+  tsetsesheet = loadImage("src/textures/Jungle/tsetsesheet.png");
   slime_sheet = loadImage("src/textures/slime_sheet.png");
+  slimeblue = loadImage("src/textures/Slime/Slimeblue.png");
+  slimegreen = loadImage("src/textures/Slime/Slimegreen.png");
   ladder_txt = loadImage("src/textures/ladder-32x32.png");
-    slimeblue = loadImage("src/textures/Slime/Slimeblue.png");
-       slimegreen = loadImage("src/textures/Slime/Slimegreen.png");
+  magic_sheet = loadImage("src/textures/00.png");
+  magic_sheet2 = loadImage("src/textures/01.png");
+  placeholder = loadImage("src/textures/placeholder.png");
+  
   load_sheet();
   
   pool.add_item(new WoodenSword(0,0), 4);
@@ -86,9 +98,12 @@ void setup(){
   mob_pool.add_mob(new Moth(0,0), 10);
   mob_pool.add_mob(new Frog(0,0), 20);
   mob_pool.add_mob(new Slime(0,0), 20);
-  mob_pool.add_mob(new Ants(0,0), 20);
-    mob_pool.add_mob(new blue_slime(0,0), 15);
+  mob_pool.add_mob(new Salamander(0,0), 20);
+  mob_pool.add_mob(new Tsetse(0,0), 20);
+      mob_pool.add_mob(new blue_slime(0,0), 15);
      mob_pool.add_mob(new green_slime(0,0), 10);
+  mob_pool.add_mob(new Ants(0,0), 20);
+  
   player = player_idle[0];
 
   generator();

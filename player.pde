@@ -141,6 +141,7 @@ public class Player{
        monsters.get(i).hp -= this.damage;
        if( monsters.get(i).hp <= 0){
          monsters.remove(monsters.get(i));
+         //image(magic_sheet2.get(64*0,64*1,64,64),monsters.get(i).x-8,monsters.get(i).y+8);
        break;
        }
      }
