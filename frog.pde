@@ -12,7 +12,7 @@ class Frog extends Mob{
   Mob make_copy(int new_x, int new_y){return new Frog(new_x,new_y); };
   
   void move(Tile[][] map, Player player, Vector<Mob> mobs){
-    if(random(10) > 9) {
+    if(random(10) > 9 && this.hp < 10) {
       this.hp++;
     }
     if(player.x > this.x && map[this.x+1][this.y].walkable && !is_mob(x+1,y,mobs)){
