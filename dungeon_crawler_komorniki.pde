@@ -10,6 +10,8 @@ PImage wall_gold_txt;
 PImage floor_gold_txt;
 PImage ladder_txt;
 
+PImage slimegreen;
+PImage slimeblue;
 PImage item_sheet;
 PImage player_sheet;
 PImage select_sheet;
@@ -72,7 +74,8 @@ void setup(){
   frogsheet = loadImage("src/textures/frogsheet.png");
   slime_sheet = loadImage("src/textures/slime_sheet.png");
   ladder_txt = loadImage("src/textures/ladder-32x32.png");
-  
+    slimeblue = loadImage("src/textures/Slime/Slimeblue.png");
+       slimegreen = loadImage("src/textures/Slime/Slimegreen.png");
   load_sheet();
   
   pool.add_item(new WoodenSword(0,0), 4);
@@ -84,7 +87,8 @@ void setup(){
   mob_pool.add_mob(new Frog(0,0), 20);
   mob_pool.add_mob(new Slime(0,0), 20);
   mob_pool.add_mob(new Ants(0,0), 20);
-  
+    mob_pool.add_mob(new blue_slime(0,0), 15);
+     mob_pool.add_mob(new green_slime(0,0), 10);
   player = player_idle[0];
 
   generator();

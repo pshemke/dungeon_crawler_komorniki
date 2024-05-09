@@ -3,7 +3,7 @@ class Mob{
   int attack = 1;
   String name = "name";
   String desc = "desc";
-  
+
   PImage icon;
   
   int x;
