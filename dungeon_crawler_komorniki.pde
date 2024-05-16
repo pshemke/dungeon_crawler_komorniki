@@ -21,6 +21,7 @@ PImage salamander_sheet;
 PImage slime_sheet;
 PImage tsetsesheet;
 PImage ants;
+PImage cocoon;
 PImage magic_sheet;
 PImage magic_sheet2;
 PImage placeholder;
@@ -77,6 +78,7 @@ void setup(){
   moth_sheet = loadImage("src/textures/mothanims.png");
   item_sheet = loadImage("src/textures/transparent_icon.png");
   ants = loadImage("src/textures/ants.png");
+  cocoon = loadImage("src/textures/jungle/cocoon.png");
   frogsheet = loadImage("src/textures/frogsheet.png");
   salamander_sheet = loadImage("src/textures/Jungle/salamandersheet.png");
   tsetsesheet = loadImage("src/textures/Jungle/tsetsesheet.png");
@@ -95,6 +97,7 @@ void setup(){
   pool.add_item(new Banana(0,0), 20);
   pool.add_item(new Pickaxe(0,0), 10);
   
+  mob_pool.add_mob(new Cocoon(0,0), 100);
   mob_pool.add_mob(new Moth(0,0), 10);
   mob_pool.add_mob(new Frog(0,0), 20);
   mob_pool.add_mob(new Slime(0,0), 20);

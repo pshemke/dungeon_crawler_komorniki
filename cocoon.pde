@@ -1,41 +1,48 @@
-class Ants extends Mob{
-  Ants(int x,int y){
+ class Cocoon extends Mob{
+   int cooldown = 0;
+   int spawnrate = 5;
+   
+  Cocoon(int x,int y){
     this.x = x;
     this.y = y;
     this.hp = 5;
     this.attack = 1;
     this.name = "cocoon";
-    this.desc = "These is tse tse spawner";
-    this.icon = ants.get(0,0,32,32);
+    this.desc = "This is tse tse spawner";
+    this.icon = cocoon.get(0,0,32,32);
   }
 
   Mob make_copy(int new_x, int new_y){return new Cocoon(new_x,new_y); };
   
+  
   void move(Tile[][] map, Player player, Vector<Mob> mobs){
-    if(player.x > this.x && map[this.x+1][this.y].walkable && !is_mob(x+1,y,mobs)){
-      if(player.x - this.x == 1 && player.y == this.y ){
-       player.hp -= this.attack; 
-      }else{
-        this.x++;
+    if(cooldown == spawnrate){
+    if(map[this.x+1][this.y].walkable && !is_mob(x+1,y,mobs)){
+      if(player.x - this.x != 1 && player.y != this.y ){
+       mobs.add(new Tsetse(this.x + 1, this.y));
+      
       }
-  /*  }else if(player.x < this.x && map[this.x-1][this.y].walkable && !is_mob(x-1,y,mobs)){
-      if(player.x - this.x == -1 && player.y == this.y){
-       player.hp -= this.attack; 
-      }else{
-        this.x--;
+    }else if(map[this.x-1][this.y].walkable && !is_mob(x-1,y,mobs)){
+      if(player.x - this.x != -1 && player.y != this.y){
+       mobs.add(new Tsetse(this.x - 1, this.y));
+      
       }
-    }else if(player.y > this.y && map[this.x][this.y+1].walkable && !is_mob(x,y+1,mobs)){
-      if(player.y - this.y == 1 && player.x == this.x){
-       player.hp -= this.attack; 
-      }else{
-        this.y++;
+    }else if(map[this.x][this.y+1].walkable && !is_mob(x,y+1,mobs)){
+      if(player.y - this.y != 1 && player.x != this.x){
+       mobs.add(new Tsetse(this.x, this.y + 1));
+      
       }
-    }else if(player.y < this.y && map[this.x][this.y-1].walkable && !is_mob(x,y-1,mobs)){
-      if(player.y - this.y == -1 && player.x == this.x){
-       player.hp -= this.attack; 
-      }else{
-        this.y--;  */
+    }else if(map[this.x][this.y-1].walkable && !is_mob(x,y-1,mobs)){
+      if(player.y - this.y != -1 && player.x != this.x){
+       mobs.add(new Tsetse(this.x, this.y - 1)); 
+      
       }
     }
-  };
-};
+    cooldown = 0;
+    }else{
+    cooldown++;
+    
+    }
+    
+ }
+ }
