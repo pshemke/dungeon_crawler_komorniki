@@ -13,4 +13,4 @@ class ConvertersDagger extends Item{
   player.damage +=5;
   player.hp -=4;
   }; 
-}
+};

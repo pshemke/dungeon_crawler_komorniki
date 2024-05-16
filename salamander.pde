@@ -5,7 +5,7 @@ class Salamander extends Mob{
     this.hp = 7;
     this.attack = 1;
     this.name = "Salamander";
-    this.desc = "This is a slamander";
+    this.desc = "This is a salamander";
     this.icon = salamander_sheet.get(0,0,64,64);
   }
 
