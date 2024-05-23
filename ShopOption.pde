@@ -8,7 +8,8 @@ class ShopOption{
   int button_height = 150;
   
   public void buy(Player character){};
-  public void display(){};
+  public void display(){
+  };
   
   
 }
