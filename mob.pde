@@ -3,6 +3,7 @@ class Mob{
   int attack = 1;
   String name = "name";
   String desc = "desc";
+  boolean interactable = false;
 
   PImage icon;
   
