@@ -41,6 +41,7 @@ int floor = 1;
 Vector<Item> backpack = new Vector<Item>();
 Vector<Item> ground_items = new Vector<Item>();
 Vector<Mob> monsters = new Vector<Mob>();
+Vector<Mob> new_monsters = new Vector<Mob>();
 
 ItemPool pool = new ItemPool();
 MobPool mob_pool = new MobPool();
@@ -97,7 +98,7 @@ void setup(){
   pool.add_item(new Banana(0,0), 20);
   pool.add_item(new Pickaxe(0,0), 10);
   
-  mob_pool.add_mob(new Cocoon(0,0), 100);
+  //mob_pool.add_mob(new Cocoon(0,0), 100);
   mob_pool.add_mob(new Moth(0,0), 10);
   mob_pool.add_mob(new Frog(0,0), 20);
   mob_pool.add_mob(new Slime(0,0), 20);
@@ -158,6 +159,10 @@ void keyPressed(){
   for(Mob mob : monsters){
    mob.move(TILE_MAP,character,monsters); 
   }
+  for(Mob mob : new_monsters){
+   monsters.add(mob);
+  }
+  new_monsters.clear();
   
   if(TILE_MAP[character.x][character.y].name == "Lava") {
     character.hp--;

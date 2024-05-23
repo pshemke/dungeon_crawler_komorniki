@@ -19,22 +19,22 @@
     if(cooldown == spawnrate){
     if(map[this.x+1][this.y].walkable && !is_mob(x+1,y,mobs)){
       if(player.x - this.x != 1 && player.y != this.y ){
-       mobs.add(new Tsetse(this.x + 1, this.y));
+       new_monsters.add(new Tsetse(this.x + 1, this.y));
       
       }
     }else if(map[this.x-1][this.y].walkable && !is_mob(x-1,y,mobs)){
       if(player.x - this.x != -1 && player.y != this.y){
-       mobs.add(new Tsetse(this.x - 1, this.y));
+       new_monsters.add(new Tsetse(this.x - 1, this.y));
       
       }
     }else if(map[this.x][this.y+1].walkable && !is_mob(x,y+1,mobs)){
       if(player.y - this.y != 1 && player.x != this.x){
-       mobs.add(new Tsetse(this.x, this.y + 1));
+       new_monsters.add(new Tsetse(this.x, this.y + 1));
       
       }
     }else if(map[this.x][this.y-1].walkable && !is_mob(x,y-1,mobs)){
       if(player.y - this.y != -1 && player.x != this.x){
-       mobs.add(new Tsetse(this.x, this.y - 1)); 
+       new_monsters.add(new Tsetse(this.x, this.y - 1)); 
       
       }
     }
