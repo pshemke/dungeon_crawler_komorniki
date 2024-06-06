@@ -4,7 +4,7 @@ class green_slime extends Mob{
     this.y = y;
     this.hp = 15;
     this.attack = 2;
-    this.name = "Blue Slime";
+    this.name = "Green Slime";
     this.desc = "Stronger than brother of his brother :)";
     this.icon = slimegreen.get(0,0,32,32);
 
