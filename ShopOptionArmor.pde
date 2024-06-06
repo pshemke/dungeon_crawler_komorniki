@@ -1,4 +1,4 @@
-/* class ShopOptionArmor extends ShopOption{
+class ShopOptionArmor extends ShopOption{
 
   ShopOptionArmor(int pos, int level){
     this.y = pos * 200; 
@@ -10,7 +10,7 @@
   
   public void buy(Player character){
     if(character.gold >= price){
-     character.Armor += power;
+     character.defence += power;
      character.gold -= price;
      stock--;
     }
@@ -26,4 +26,3 @@
   
   
 }
-*/

@@ -58,6 +58,9 @@ enum Tiles{
  MAX
 }
 
+String game_state = "shop";
+
+Vector<ShopOption> shopOptions = new Vector<ShopOption>();
 
 
 Tile[][] TILE_MAP = new Tile[X_TILES_NUMBER][Y_TILES_NUMBER];
@@ -113,13 +116,20 @@ void setup(){
   generator();
   
   character.discover(TILE_MAP);
+  
+  shopOptions.add( new ShopOptionRandom(0,1));
+  shopOptions.add( new ShopOptionMining(1,1));
+  shopOptions.add( new ShopOptionArmor(2,1));
 }
 
 void draw(){
 
   background(12, 31, 89);
-    fill(255);
-                 rect(285,575,5,445);
+  fill(255);
+  rect(285,575,5,445);
+  character.show_stats();
+  if(game_state == "game"){
+
     for(int i = 0; i < X_TILES_NUMBER;i++){
       for(int j = 0; j < Y_TILES_NUMBER; j++){
         TILE_MAP[i][j].disp();
@@ -128,7 +138,7 @@ void draw(){
   
   character.animate();
   character.disp();
-  character.show_stats();
+
   for(Item item : ground_items){
     if(TILE_MAP[item.x][item.y].visible){
    item.disp_map(); 
@@ -144,9 +154,17 @@ void draw(){
         TILE_MAP[i][j].desc(monsters);
     }
   }
+  }else if(game_state == "shop"){
+    fill(150);
+    rect(0,0,33*32, 18*32);
+    for (ShopOption option : shopOptions){
+     option.display() ;
+    }
+  }
 }
 
 void keyPressed(){
+  if (game_state == "game"){
  character.move(key); 
  for(Item item : ground_items){
     if(character.x == item.x && character.y == item.y){
@@ -209,6 +227,8 @@ void keyPressed(){
       }
     }
     character.stamina --;
+  }
+  
   }
 }
 

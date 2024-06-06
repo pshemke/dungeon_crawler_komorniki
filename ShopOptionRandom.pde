@@ -20,7 +20,7 @@ class ShopOptionRandom extends ShopOption{
       delay(10000);
       character.hp -= 30;
     }else if(randomShop ==5){    
-      monsters.add(mob);
+      //monsters.add(mob);
       println("UNDERTALE OST: Enemy Approaching");
     }else if(randomShop ==6){
       character.hp += 5;
