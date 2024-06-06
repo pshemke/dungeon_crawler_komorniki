@@ -15,11 +15,13 @@ class ShopOptionRandom extends ShopOption{
     }else if(randomShop ==3){
       println("it's nothing but a scam!");
     }else if(randomShop ==4){
-      character.hp += 5;
-      println("placeholder");
-    }else if(randomShop ==5){
-      character.hp += 5;
-      println("placeholder");
+      character.hp += 50;
+      println("a large amount of health was received... or was it?");
+      delay(10000);
+      character.hp -= 30;
+    }else if(randomShop ==5){    
+      monsters.add(mob);
+      println("UNDERTALE OST: Enemy Approaching");
     }else if(randomShop ==6){
       character.hp += 5;
       println("placeholder");
