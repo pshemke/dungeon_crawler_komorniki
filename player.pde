@@ -11,7 +11,7 @@ public class Player{
   int mining = 1;
   int defence = 0;
   int hp = 10;
-  int gold = 0;
+  int gold = 1000;
   int stamina = 5;
   
   

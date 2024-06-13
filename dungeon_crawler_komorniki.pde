@@ -58,7 +58,7 @@ enum Tiles{
  MAX
 }
 
-String game_state = "shop";
+String game_state = "shop"; //"shop" "game"
 
 Vector<ShopOption> shopOptions = new Vector<ShopOption>();
 
@@ -229,6 +229,19 @@ void keyPressed(){
     character.stamina --;
   }
   
+  }
+}
+
+void mouseClicked(){
+  if (game_state == "shop"){
+    for (ShopOption option : shopOptions){
+      if(mouseX > option.x &&
+          mouseX < option.x + option.button_width &&
+          mouseY > option.y &&
+          mouseY < option.y + option.button_height){
+            option.buy(character);
+          }
+    }
   }
 }
 
