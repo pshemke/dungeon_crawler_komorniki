@@ -165,6 +165,9 @@ void draw(){
 
 void keyPressed(){
   if (game_state == "game"){
+   if (key == ' '){
+     game_state = "shop";
+   }else{
  character.move(key); 
  for(Item item : ground_items){
     if(character.x == item.x && character.y == item.y){
@@ -230,6 +233,12 @@ void keyPressed(){
   }
   
   }
+  }else if(game_state == "shop"){
+   if (key == ' '){
+    game_state = "game"; 
+   }
+  }
+  
 }
 
 void mouseClicked(){
