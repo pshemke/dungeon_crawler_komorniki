@@ -2,14 +2,13 @@ class ShopOptionMining extends ShopOption{
 
   ShopOptionMining(int pos, int level){
     this.y = pos * 200; 
-    price = (int)random(10) * 3;
-    power = (int)random(10) * level;
-    stock = (int)random(5);
+    price = (int)random(10) * 3 + 5;
+    power = (int)random(10) * level + 2;
+    stock = (int)random(5) + 1;
   }
 
   
   public void buy(Player character){
-    power++;
     if(character.gold >= price && stock > 0 && character.mining < 100){
      character.mining += power;
      character.gold -= price;
