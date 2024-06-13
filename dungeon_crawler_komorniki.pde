@@ -117,7 +117,7 @@ void setup(){
   
   character.discover(TILE_MAP);
   
-  shopOptions.add( new ShopOptionRandom(0,1));
+  shopOptions.add( new ShopOptionHealth(0,1));
   shopOptions.add( new ShopOptionMining(1,1));
   shopOptions.add( new ShopOptionArmor(2,1));
 }
