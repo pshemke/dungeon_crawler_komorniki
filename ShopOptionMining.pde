@@ -18,7 +18,6 @@ class ShopOptionMining extends ShopOption{
     }
   };
   public void display(){
-    fill(50);
     rect(this.x,this.y,this.button_width, this.button_height);
     text("Cost: " + this.price, this.x + 20, this.y + 20); 
     text("Extra Mining: " + this.power, this.x + 200, this.y + 20); //effect
