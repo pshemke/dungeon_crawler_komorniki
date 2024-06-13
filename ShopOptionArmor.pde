@@ -19,9 +19,10 @@ class ShopOptionArmor extends ShopOption{
   public void display(){
     fill(50);
     rect(this.x,this.y,this.button_width, this.button_height);
-    text("Cost: " + this.price, this.x + 20, this.y +20);
-    text("Extra Armor: " + this.power, this.x + 200, this.y +20); //effect
-    text("Stock: " + this.stock, this.x + 500, this.y +20);
+    fill (#FFFFFF);
+    text("Cost: " + this.price, this.x + 40, this.y +80);
+    text("Extra Armor: " + this.power, this.x + 180, this.y +80); //effect
+    text("Stock: " + this.stock, this.x + 440, this.y +80);
   };
   
   
