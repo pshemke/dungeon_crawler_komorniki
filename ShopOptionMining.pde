@@ -9,6 +9,7 @@ class ShopOptionMining extends ShopOption{
 
   
   public void buy(Player character){
+    power++;
     if(character.gold >= price && stock > 0 && character.mining < 100){
      character.mining += power;
      character.gold -= price;
